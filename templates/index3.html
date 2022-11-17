@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main3.css')}}"/>
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="nav-logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}');">
+                        <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="content" id="content">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div  class="alert">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <div class="section organiz" id="forms">
+                <div id="login">
+                    <form id="frLog" action="" method="POST">
+                        <span>Inicio Sesi&oacute;n</span>
+                        <input type="email" id="userMail" name="userMail" placeholder="Correo" required>
+                        <input type="password" id="userPass" name="userPass" placeholder="Clave" required >
+                        <button type="button" onclick="submition('frLog','{{url_for('login')}}');">Iniciar Sesion</button>
+                    </form>
+                </div>
+                <div id="presignup">
+                    <span>Registrate</span>
+                    <div class="organiz" id="withLog">
+                        <span>Inicia el registro con tu cuenta de:</span>
+                        <form id="frPrSig" method="GET">
+                            <!--button type="button" onclick="var w = window.open('{{url_for('withGoogle')}}', '_blank');w.focus();"-->
+                            <button type="button" onclick="submition('frPrSig','{{url_for('withGoogle')}}');">
+                                <img src="{{url_for('static', filename='recourses/icon-google-log.png')}}"/>
+                            </button>
+                        </form>
+                    </div>
+                    <form id="frPrSig" method="POST">
+                        <div class="organiz">
+                            <input type="text" id="userNom" name="userNom" placeholder="Nombre" required >
+                            <input type="text" id="userApe" name="userApe" placeholder="Apellido" required >
+                        </div>
+                        <input type="email" id="userMail" name="userMail" placeholder="Correo electronico o numero de identificaci&oacute;n" required>
+                        <input type="password" id="userPass" name="userPass" placeholder="Clave" required >
+                        <button type="button" onclick="submition('frPrSig','{{url_for('signin')}}');">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            function submition(frmId, next, newTab) {
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+            }
+        </script>
+	</body>
+</html>

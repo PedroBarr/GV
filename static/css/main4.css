@@ -1,0 +1,163 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: rgb(253,239,79);
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 5%;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+width: 100%;
+display: block;
+}
+.banner{
+width: 100%;
+}
+.organiz{
+display: flex;
+}
+.respons{
+display: none;
+}
+img{
+width: 100%;
+}
+#bienvenida{
+background: rgb(242,237,81);
+}
+@media screen and (max-width:760px){
+    #bienvenida{
+    background: rgb(249,239,30);
+    }
+}
+#isaias img, #corazon img{
+width: 40%;
+margin: auto 2%;
+}
+#isaias div, #corazon div{
+width: 50%;
+margin: auto 2%;
+font-family: "aileron";
+font-size: 100%;
+}
+#isaias{
+background: rgb(253,213,78,0.998);
+color: #000;
+padding-bottom: 15%;
+padding-top: 15%;
+}
+#isaias div, #isaias div *{
+background: rgb(253,213,78,0);
+color: #000;
+text-align: justify;
+}
+#isaias div p{
+width: 100%;
+font-size: 120%;
+line-height:1.5;
+}
+#isaias div span{
+width: 80%;
+display:block;
+margin:auto;
+margin-left:10%;
+margin-right:10%;
+font-size: 120%;
+text-align: right;
+}
+#corazon{
+padding-top:15%;
+padding-bottom:10%;
+}
+#corazon div{
+text-align: justify;
+}
+#corazon div p{
+width: 100%;
+color:rgb(253,213,79);
+font-size: 120%;
+line-height:2;
+}
+#corazon div em{
+color:rgb(253,213,79);
+}
+@media screen and (max-width:760px){
+    .organiz{
+    display: block;
+    }
+    .respons{
+    display:block;
+    }
+    .no-respons{
+    display:none;
+    }
+    #isaias img{
+    display: none;
+    }
+    #isaias div{
+    width: 80%;
+    margin: auto 10%;
+    font-size: 100%;
+    }
+    #isaias{
+    background-image: url(../recourses/background-isaias.png);
+    background-position: 0% 100%;
+    background-size: 40% auto;
+    background-repeat: no-repeat;
+    padding:30% 0;
+    }
+    #corazon{
+    padding-top:30%;
+    padding-bottom:20%;
+    }
+    #corazon img{
+    width: 60%;
+    margin: auto 2%;
+    }
+    #corazon div{
+    width: 90%;
+    margin: auto 5%;
+    }
+    #corazon div p{
+    font-size:120%;
+    }
+    #isaias div span{
+    text-align: center;
+    }
+}

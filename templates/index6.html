@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - M&uacute;sica</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main6.css')}}"/>
+{%endblock%}
+{%block content%}
+        <div class="content" id="content">
+            <div class="section banner" id="titulo">
+                <img src="{{url_for('static', filename='recourses/title-musica.png')}}"/>
+            </div>
+            <div class="section cancion" id="Me-Alineo-A-Ti">
+                <form>
+                    <div class="organiz">
+                        <div class="cover">
+                            <img src="{{url_for('static', filename='recourses/musica/cover-Me-Alineo-A-Ti.png')}}"/>
+                        </div>
+                        <div class="banner data">
+                            <img src="{{url_for('static', filename='recourses/musica/data-Me-Alineo-A-Ti.png')}}"/>
+                        </div>
+                    </div>
+                    <div class="preview">
+                        <div class="organiz ref-view">
+                            <div>
+                                <a href="https://open.spotify.com/album/5LRv8XpjN1dntqQAjjGe46">Spotify</a>
+                            </div>
+                            <div>
+                                <a href="https://www.youtube.com/watch?v=ChDCt0RZ2eQ">Youtube</a>
+                            </div>
+                            <div>
+                                <a href="https://music.apple.com/album/1503772539?app=music">iTunes</a>
+                            </div>
+                            <div>
+                                <a href="https://www.deezer.com/es/album/137036742">Deezer</a>
+                            </div>
+                            <div>
+                                <a href="https://sl.onerpm.com/7361887494">Otras</a>
+                            </div>
+                        </div>
+                        <div class="section data">
+                            <video controls autoplay muted loop>
+                                <source src="{{url_for('static', filename='recourses/musica/preview-Me-Alineo-A-Ti.mp4')}}" type="video/mp4"/>
+                                <source src="https://r1---sn-4g5e6nzs.googlevideo.com/videoplayback?expire=1587464963&ei=onaeXrnFOoLs1wLy5YmQCQ&ip=46.239.40.103&id=o-AH4Qkjo6dh4QRtm06Zp5YXbQcZEvUgy1uMneG5QNDyzE&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&gir=yes&clen=35085939&ratebypass=yes&dur=576.783&lmt=1585097061016954&fvip=1&c=WEB&txp=6216222&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJpPlLswRAIgCTRF9Cf6xjvrDcji1vKIihSy0lR9wVjpZp0lIDnez4MCIHQUfGv8UzSdff0lxa-0oOVEXG1X_MnFhDKafFBpiins&video_id=ChDCt0RZ2eQ&title=Me+Alineo+a+T%C3%AD+-+Adoraci%C3%B3n+%26+Sanidad+-+Video+Lyrics&redirect_counter=1&rm=sn-uiu-15be7e&req_id=4410caab4f99a3ee&cms_redirect=yes&ipbypass=yes&mh=de&mm=29&mn=sn-4g5e6nzs&ms=rdu&mt=1587443313&mv=m&mvi=0&pl=21&lsparams=ipbypass,mh,mm,mn,ms,mv,mvi,pl&lsig=ALrAebAwRgIhAJ-gEO5z3fnD8TOdBXBQoz-8zMRjdKwfBCwfoNOujZpyAiEAzAnUyZxDvx9lh7HfaPLcfBuvwHlzKs0CN_qNOgufyyY%3D" type="video/mp4"/>
+                                <img src="{{url_for('static', filename='recourses/musica/cover-Me-Alineo-A-Ti.png')}}" alt="Video no soportado">
+                                Su navegador no soporta contenido multimedia.
+                            </video>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="section banner" id="redes">
+                <form id="frmRedes">
+                    <span>En redes sociales</span>
+                    <div class="organiz">
+                        <button type="button" onclick="submition('frmRedes', 'https://youtu.be/ChDCt0RZ2eQ');">
+                            <img src="{{url_for('static', filename='recourses/icon-Ytb.png')}}"/>
+                        </button>
+                        <button type="button" onclick="submition('frmRedes', 'https://www.facebook.com/adoracionysanidad/');">
+                            <img src="{{url_for('static', filename='recourses/icon-Fcb.png')}}"/>
+                        </button>
+                        <button type="button" onclick="submition('frmRedes', 'https://www.instagram.com/adoracionysanidad/');">
+                            <img src="{{url_for('static', filename='recourses/icon-Ing.png')}}"/>
+                        </button>
+                    </div>
+                </form>
+            </div>
+{%endblock%}

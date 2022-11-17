@@ -1,0 +1,202 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+
+/*Nav bar*/
+#navbar{
+font-family: Calibri;
+font-size: 120%;
+}
+.navbar{
+display: block;
+width:100%;
+overflow:hidden;
+position:fixed;
+top:0;
+left:0;
+margin: 0;
+padding: 0;
+text-align: center;
+background: #000;
+z-index: 5;
+}
+.navbar *{
+background: rgba(0, 0, 0, 0);
+color: rgb(253,239,79);
+max-height:40px;
+}
+.navbar div{
+text-align: center;
+display: inline-block;
+}
+.navbar button{
+background: rgba(0, 0, 0, 0);
+font-size: 100%;
+font-family: "aileron heavy";
+border: none;
+padding: 3px;
+margin: 2px;
+}
+.nav-logo{
+width: 10%;
+float: left;
+}
+.navbar .nav-log{
+width: 20%;
+float: left;
+display: flex;
+}
+.nav-log button{
+float: left;
+font-size: 70%;
+margin: 5%;
+background: #202020;
+border-radius: 8px;
+}
+@media screen and (max-width:760px){
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 40px;
+text-align: center;
+min-height:98%;
+height: auto;
+color: #fff;
+background-image: url('../recourses/background-log.png');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-position: 100% 100%;
+}
+.section{
+text-align: center;
+margin: auto;
+width: 100%;
+display: block;
+}
+.organiz{
+display: flex;
+}
+#forms .organiz{
+display: flex;
+}
+.responsiv{
+display:none;
+}
+#forms *{
+width: 98%;
+margin:1%;
+display: block;
+}
+#signup{
+margin: auto;
+width: 80%;
+}
+#forms .responsiv{
+margin: 10% 0;
+}
+#image-prof{
+width:80%;
+margin: 0 auto;
+}
+#image-prof img{
+width:100%;
+margin: 0 auto;
+max-width: 200px;
+max-height: 200px;
+}
+div#signup span{
+margin: 10% 0;
+font-size: 100%;
+text-align: left;
+font-family: "aileron heavy";
+width: 100%;
+}
+div#signup span{
+margin-bottom:0;
+}
+#signup button{
+margin:10% 0;
+font-size: 100%;
+font-family: "aileron heavy";
+border-radius: 15px;
+background: #fdd54f;
+border:none;
+padding: 2%;
+}
+#signup input{
+font-size: 100%;
+font-family: "aileron";
+border-radius: 25px;
+background: #fdd54f;
+border:none;
+padding: 1%;
+}
+@media screen and (max-width:760px){
+    .organiz{
+    display: block;
+    }
+    div#signup span{
+    text-align: center;
+    }
+    #signup{
+    width: 100%;
+    }
+    .content{
+    background-size: cover;
+    }
+}
+.alert{
+background: #d33;
+color: #fff;
+font-family: "aileron heavy";
+font-size: 100%;
+padding: 1% 0;
+}
+
+/*streaming*/
+.embed-responsive {
+overflow:hidden;
+/*padding-bottom:56.25%;/*facebook video*/
+/*padding-bottom:100%;/*wordpress*/
+padding-bottom:56.25%;/*youtube video*/
+position:relative;
+height:0;
+width: 100%;
+}
+.embed-responsive iframe {
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}

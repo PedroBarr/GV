@@ -1,0 +1,265 @@
+<!--style="background: #ccc;" -->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <title>Cantico Nuevo - Conviertete en un l&iacute;der de adoraci&oacute;n</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main2.css')}}"/>
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="nav-logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}');">
+                        <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    </button>
+                </div>
+                <div class="respons-icon">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('ourcourses')}}');">
+                        <img src="{{url_for('static', filename='recourses/icon-responsive-menu.png')}}"/>
+                    </button>
+                </div>
+                <div class="nav-menu">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('ourcourses')}}');">
+                        <label class="nonly-responsive">Cursos</label>
+                    </button>
+                    <button type="button" onclick="desplegar('despleg-cursos')">
+                        <label>&rsaquo;</label>
+                    </button>
+                </div>
+                <div class="nav-search">
+                    <input type="text" class="desplegable pleg" placeholder="Buscar en Cantico Nuevo..." id="searchspace" name="searchspace"/>
+                    <button type="button" onclick="desplegar('searchspace'); makemesub('searchnavbar', submition('frmMenu', '{{url_for('searchcourse')}}'));" id="searchnavbar">
+                        <label>&#128270;</label>
+                    </button>
+                </div>
+                <div class="nav-log nonly-responsive">
+                    {% if current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('profile')}}');">
+                            <img src="{{current_user.image_usu}}">
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('logout')}}');">salir</button>
+                    {% endif %}
+                    {% if not current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('login')}}');">
+                            Inicio de Sesion
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('signin')}}');">
+                            Registrate
+                        </button>
+                    {% endif %}
+                </div>
+                <div class="desplegable pleg" id="despleg-cursos">
+                    {%for a in cursos%}
+                        <a href="{{url_for('course', id_curs=a.id_curs)}}">{{a.nom_curs}}</a>
+                    {%endfor%}
+                </div>
+            </form>
+        </div>
+        <script>
+            function replegar() {
+                var x = document.getElementById("despleg-cursos");
+                x.className = "desplegable pleg";
+            }
+            function desplegar(id) {
+                var x = document.getElementById(id);
+                if (x.className === "desplegable") {
+                    x.className += " pleg";
+                } else {
+                    x.className = "desplegable";
+                }
+            }
+            function makemesub(id, func){
+                var x = document.getElementById(id);
+                x.setAttribute("onclick", func);
+            }
+        </script>
+        <div class="content" id="content">
+            <div class="section banner" id="bienvenida">
+                <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                <span>Alcanza tu Proposito</span>
+            </div>
+            <div class="section banner" id="presentacion">
+                <img class="title-padd non-responsiv" src="{{url_for('static', filename='recourses/title_alcanza_proposito.png')}}"/>
+                <div class="title-padd responsiv">
+                    <span>Alcanza tu Proposito</span>
+                    <p class="produc-desc">Escuela de adoraci&oacute;n, ministerial y m&uacute;sica</p>
+                </div>
+                <div class="section organiz">
+                    <div class="section banner produc-view">
+                        <img src="{{url_for('static', filename='recourses/icon_carrera.png')}}"/>
+                        <span>Carrera Cantico Nuevo</span>
+                        <span class="produc-desc">Avanza en tu camino profesional</span>
+                    </div>
+                    <div class="section banner produc-view">
+                        <img src="{{url_for('static', filename='recourses/icon_equipos.png')}}"/>
+                        <span>Individual o Grupal</span>
+                        <span class="produc-desc">Crece personalmente y como equipo</span>
+                    </div>
+                    <div class="section banner produc-view">
+                        <img src="{{url_for('static', filename='recourses/icon_modalidad.png')}}"/>
+                        <span>Elige tu modalidad</span>
+                        <span class="produc-desc">Presencial, semipresencial, online o virtual 24/7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section banner" id="retaila">
+                <span class="title-padd">
+                    La escuela C&aacute;ntico Nuevo es una escuela de adoraci&oacute;n y m&uacute;sica.
+                </span>
+            </div>
+            <div class="section organiz" id="ourcourses">
+                <div class="section goto-panel" id="goto-courses-panel">
+                    <span>Nuestros cursos</span>
+                    <form id='frmCors'>
+                        <button type="button" onclick="submition('frmCors', '{{url_for('ourcourses')}}');">
+                            <span>Explorar cursos</span>
+                            <img src="{{url_for('static', filename='recourses/goto-arrow-head.png')}}"/>
+                        </button>
+                    </form>
+                </div>
+                <div class="section organiz" id="ourcourses-preview">
+                    <div class="produc-preview">
+                        <div class="goto-panel">
+                            <!--div class="produc-view">
+                                <span>Carrera C&aacute;ntico Nuevo Preparatorio</span>
+                                <span class="produc-desc">Avanza en tu camino profesional en m&uacute;sica</span>
+                            </div-->
+                            <img src="{{url_for('static', filename='recourses/prebanner-carrera-musical.png')}}"/>
+                            <form id="frmCours1">
+                                <button type="button" onclick="submition('frmCours1', '{{url_for('course', id_curs=1)}}');">
+                                    <!--img src="{{url_for('static', filename='recourses/goto-arrow.png')}}"/-->
+                                    <span>Ver m&aacute;s</span>
+                                    <span class="no-just-text"> &nbsp; &rarr;</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="produc-preview">
+                        <div class="goto-panel">
+                            <!--div class="produc-view">
+                                <span>M&aacute;s cursos enfocados en m&uacute;sica</span>
+                                <span class="produc-desc">y preparaci&oacute;n profesional</span>
+                            </div-->
+                            <img src="{{url_for('static', filename='recourses/prebanner-ministerial.png')}}"/>
+                            <form id="frmCours1">
+                                <button type="button" onclick="submition('frmCours1', 'https://forms.gle/bbLBa76HduNsbBtV7');">
+                                    <!--img src="{{url_for('static', filename='recourses/goto-arrow.png')}}"/-->
+                                    <span>Ver m&aacute;s</span>
+                                    <span class="no-just-text"> &nbsp; &rarr;</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section organiz" id="ourequipos">
+                <div class="produc-view">
+                    <span class="produc-desc">Elige tu camino</span>
+                    <div class="goto-panel">
+                        <span>Preparatorio musical, un curso a la vez.</span>
+                        <span>Clases particulares</span>
+                        <span>Individual</span>
+                        <span>Grupos</span>
+                        <form id="frmEqup">
+                            <button type="button" onclick="submition('frmEqup', '{{url_for('ourcourses')}}');">
+                                <span>Leer M&aacute;s</span>
+                                <img src="{{url_for('static', filename='recourses/goto-arrow-head.png')}}"/>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dos-vinetas-izq-sup">
+                    <!--img src="{{url_for('static', filename='recourses/degrade azul.png')}}"/-->
+                    <img src="{{url_for('static', filename='recourses/prebanner-equipos.png')}}"/>
+                </div>
+            </div>
+            <div class="section organiz" id="ourmodalidad">
+                <div class="produc-view">
+                    <span class="produc-desc">Elige tu modalidad</span>
+                    <div class="goto-panel">
+                        <span>Presencial</span>
+                        <span>Semipresencial</span>
+                        <span>Online</span>
+                        <span>Virtual</span>
+                        <form id="frmEqup">
+                            <button type="button" onclick="submition('frmEqup', '{{url_for('ourcourses')}}');">
+                                <span>Leer M&aacute;s</span>
+                                <img src="{{url_for('static', filename='recourses/goto-arrow-head.png')}}"/>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dos-vinetas-izq-sup">
+                    <!--img src="{{url_for('static', filename='recourses/degrade azul.png')}}"/-->
+                    <img src="{{url_for('static', filename='recourses/prebanner-modalidad.png')}}"/>
+                </div>
+            </div>
+            <div class="section organiz" id="colorario">
+                <div class="dos-vinetas-izq-sup">
+                    <!--img src="{{url_for('static', filename='recourses/degrade azul.png')}}"/-->
+                    <img src="{{url_for('static', filename='recourses/banner-colorario.png')}}"/>
+                </div>
+                <div class="produc-view">
+                    <span id="colorario1">Aprende</span>
+                    <span id="colorario2">Capacitate</span>
+                    <span id="colorario3">Crece personal y profesionalmente</span>
+                    <span id="colorario4">Conviertete en l&iacute;der de adoraci&oacute;n</span>
+                </div>
+            </div>
+            <div class="section" id="form-contacto">
+                <form id="frmGotCont">
+                    <span>Otros cursos</span>
+                    <button type="button" onclick="submition('frmGotCont', 'https://forms.gle/WxFCTxKiMtAETbCm8');">
+                        <span>Contacto</span>
+                    </button>
+                </form>
+            </div>
+            <div class="bottom" id="contacto">
+                <div class="col-bottom">
+                    <div class="col">
+                        <span>C&aacute;ntico Nuevo</span>
+                        <br/>
+                        <a href="{{url_for('index')}}">Adoraci&oacute;n y Sanidad</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases particulares</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases grupales</a>
+                        <a href="{{url_for('course', id_curs=1)}}">Curso Preparatorio Musical</a>
+                        <a href="{{url_for('ourcourses')}}">Cursos</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para iglesias</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para empresas</a>
+                    </div>
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                        <span>M&aacute;s</span>
+                        <br/>
+                        <a href="{{url_for('privacity')}}">T&eacute;rminos</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Contacto</a>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <div id="copyright">
+                    <span>&trade;C&aacute;ntico Nuevo Todos los Derechos Reservados 2020</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function submition(frmId, next, newTab) {
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+                desplegar();
+            }
+        </script>
+	</body>
+</HTML>

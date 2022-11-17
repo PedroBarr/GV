@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <link rel="icon" href="{{url_for('static', filename='recourses/icon-adoracion-y-sanidad.png')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/layout.css')}}">
+        {%block header%}
+        {%endblock%}
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('index')}}')">
+                        <!--img src="{{url_for('static', filename='recourses/logo-adoracion-y-sanidad.png')}}"/-->
+                        <span>Adoraci&oacute;n y Sanidad</span>
+                    </button>
+                </div>
+                <div class="icon">
+                    <button type="button" onclick="desplegar()">
+                        <img src="{{url_for('static', filename='recourses/icon-responsive-menu.png')}}"/>
+                    </button>
+                </div>
+                <div class="menu" id="menu">
+                    <button type="button" onclick="submition('frmMenu', 'https://adoracionysanidad.mercadoshops.com.co/')">Tienda</button>
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('donar')}}');">Donar</button>
+                    <button type="button" onclick="submition('frmMenu', 'https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform');">Eventos</button>
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('recursos')}}')">Recursos</button>
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('musica')}}');">M&uacute;sica</button>
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}', 1);">Escuela</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            function replegar() {
+                var x = document.getElementById("menu");
+                x.className = "menu";
+            }
+            function desplegar() {
+                var x = document.getElementById("menu");
+                if (x.className === "menu") {
+                    alert
+                    x.className += " responsive";
+                } else {
+                    x.className = "menu";
+                }
+            }
+        </script>
+        {%block content%}
+        {%endblock%}
+            <div class="bottom" id="contacto">
+                <form method="GET" action="" id="frmBott">
+                    <div class="col-bottom">
+                        <div class="col title">
+                            <span>Adoraci&oacute;n y Sanidad</span>
+                            <a href="{{url_for('school')}}">C&aacute;ntico Nuevo</a>
+                            <a href="{{url_for('musica')}}">M&uacute;sica</a>
+                            <a href="{{url_for('recursos')}}">Recursos</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Eventos</a>
+                            <a href="https://adoracionysanidad.mercadoshops.com.co/">Tienda</a>
+                            <a href="https://www.youtube.com/playlist?list=PLOjOPainLluuoFTvxcjHFMjaLtJM7VTtv">Transmisi&oacute;n en Vivo</a>
+                            <a href="{{url_for('donar')}}">Donaciones</a>
+                        </div>
+                        <div class="col title">
+                            <span>Recursos</span>
+                            <a href="{{url_for('blog')}}">Blog Adoracion y Sanidad</a>
+                            <a href="https://wordpress.com/pages/adoracionysanidad.wordpress.com">Notas con mensajes</a>
+                            <a href="https://play.google.com/store/music/album/Adoraci%C3%B3n_y_Sanidad_Catalina_Pach%C3%B3n_Me_Alineo_a_T%C3%AD?id=Ba3a3xnf6msmzsgi2zqyagzdfu4&hl=es">Google Play Music</a>
+                        </div>
+                        <div class="col out-title">
+                            <a href="https://www.youtube.com/channel/UClGroRA_lBUnH0S1MKjNn_A/featured">YouTube</a>
+                            <a href="https://open.spotify.com/album/5LRv8XpjN1dntqQAjjGe46">Spotify</a>
+                            <a href="https://music.apple.com/album/1503772539?app=music">iTunes</a>
+                            <a href="https://sl.onerpm.com/7361887494">Otras Plataformas</a>
+                        </div>
+                        <div class="col title">
+                            <span>M&aacute;s</span>
+                            <a href="{{url_for('privacity')}}">T&eacute;rminos</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Contacto</a>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                    <div id="copyright">
+                        <span>&trade;Adoraci&oacute;n y Sanidad Todos los Derechos Reservados 2020</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            function submition(frmId, next, newTab){
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+                replegar();
+            }
+        </script>
+	</body>
+</HTML>

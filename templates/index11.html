@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main5.css')}}"/>
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="nav-logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}');">
+                        <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="content" id="content">
+            <div class="section" id="forms">
+                <div id="signup">
+                    <span>Registrate</span>
+                    <form id="frPrSig" method="POST">
+                        <div id="image-prof">
+                            <img src="{{session['usuario_temp']['imag']}}"/>
+                        </div>
+                        <div class="organiz">
+                            <input type="text" id="userNom" name="userNom" placeholder="Nombre" value="{{session['usuario_temp']['name']}}" required>
+                            <input type="text" id="userApe" name="userApe" placeholder="Apellido" value="{{session['usuario_temp']['last']}}" required>
+                        </div>
+                        <div>
+                            <input type="text" id="userPrf" name="userPrf" placeholder="Profesion (opcional)"  value="{{session['usuario_temp']['prof']}}">
+                            <input type="text" id="userUni" name="userUni" placeholder="Alma Matter (opcional)" value="{{session['usuario_temp']['alma']}}" >
+                        </div>
+                        <input type="email" id="userMail" name="userMail" placeholder="Correo electronico" value="{{session['usuario_temp']['mail']}}" required>
+                        <div class="organiz">
+                            <input type="email" id="userPhn" name="userPhn" placeholder="Numero telefonico de contacto (sin espacios ni separadores)" value="{{session['usuario_temp']['phon']}}" required>
+                            <input type="email" id="userEdad" name="userEdad" placeholder="Edad" value="{{session['usuario_temp']['edad']}}" required>
+                        </div>
+                        <input type="email" id="userIdPrs" name="userIdPrs" placeholder="Numero de identificaci&oacute;n (TI, CC o CE, sin espacios ni separadores)" value="{{session['usuario_temp']['idpe']}}" required>
+                        <div class="organiz">
+                            <input type="password" id="userPass" name="userPass" placeholder="Clave" required>
+                            <input type="password" id="userConf" name="userConf" placeholder="Clave (confirmacion)" required >
+                        </div>
+                        <button type="button" onclick="" disabled>Actualizar Datos</button>
+                        <button type="button" onclick="submition('frPrSig','{{url_for('logout')}}');">Salir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            function submition(frmId, next, newTab) {
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+            }
+        </script>
+	</body>
+</html>

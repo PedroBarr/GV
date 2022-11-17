@@ -1,0 +1,89 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: #fc0;
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 4%;
+text-align: center;
+}
+.organiz{
+display: flex;
+}
+.organiz div{
+margin: auto;
+width:100%;
+padding:10% 0;
+}
+iframe{
+width: 100%;
+height: 100%;
+}
+.organiz span{
+display:block;
+width:100%;
+margin:auto;
+text-align:left;
+padding:0 10%;
+font-family: "aileron";
+font-size:200%;
+}
+.organiz img{
+display:block;
+width:80%;
+margin:auto;
+}
+.organiz button{
+margin: 5% auto;
+border:none;
+background: rgb(253,239,79);
+border-radius:8px;
+padding:5%;
+}
+.organiz button span{
+font-size:100%;
+color: #000;
+background: rgb(253,239,79, 0)
+}
+
+@media screen and (max-width:760px){
+    .organiz{
+    display: block;
+    }
+    .content{
+    margin-top: 10%;
+    }
+}

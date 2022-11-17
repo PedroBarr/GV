@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - M&uacute;sica, Entrenamiento, Recursos y Escuela</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+{%endblock%}
+{%block content%}
+	    <div class="content" id="content">
+            <div class="section" id="bienvenida">
+                <form method="GET" action="" id="frmMas">
+                    <img src="{{url_for('static', filename='recourses/banner-adoracion-y-sanidad.png')}}"/>
+                    <p>Adoraci&oacute;n Sanidad M&uacute;sica Entrenamiento Recursos Escuela.</p>
+                    <button type="button" onclick="submition('frmMas', '{{url_for('conocermas')}}');" class="btn">Leer m&aacute;s</button>
+                </form>
+            </div>
+            <div class="section" id="escuela">
+                <div>
+                    <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    <p>Es la escuela de adoraci&oacute;n y m&uacute;sica. Conviertete en un l&iacute;der de adoraci&oacute;n.</p>
+                </div>
+                <form method="GET" action="" id='frmCan'>
+                    <button type="button" onclick="submition('frmCan', '{{url_for('school')}}', 1);" class="btn">Ir a la Escuela</button>
+                </form>
+            </div>
+            <div class="section" id="musica">
+                <div>
+                    <img class="responsiv" src="{{url_for('static', filename='recourses/background-musica-responsive.png')}}"/>
+                    <img class="no-responsiv" src="{{url_for('static', filename='recourses/background-musica-no-responsive.png')}}"/>
+                </div>
+                <form method="GET" action="" id='frmMus'>
+                    <p>Conoce nuestra musica.</p>
+                    <button type="button" onclick="submition('frmMus', '{{url_for('musica')}}');" class="btn">Ir a la M&uacute;sica</button>
+                </form>
+            </div>
+            <div class="section" id="recursos">
+                <div>
+                    <img class="responsiv" src="{{url_for('static', filename='recourses/background-recursos-responsive.png')}}"/>
+                    <img class="no-responsiv" src="{{url_for('static', filename='recourses/background-recursos-no-responsive.png')}}"/>
+                </div>
+                <form method="GET" action="" id='frmRec'>
+                    <button type="button" onclick="submition('frmRec', '{{url_for('recursos')}}');" class="btn">Ir a Recursos</button>
+                </form>
+            </div>
+            <div class="section" id="eventos">
+                <div>
+                    <img class="responsiv" src="{{url_for('static', filename='recourses/background-eventos-responsive.png')}}"/>
+                    <img class="no-responsiv" src="{{url_for('static', filename='recourses/background-eventos-no-responsive.png')}}"/>
+                </div>
+                <form method="GET" action="" id='frmEven'>
+                    <button type="button" onclick="submition('frmRec', 'https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform');" class="btn">Ir a Contacto</button>
+                </form>
+            </div>
+            <div class="section" id="donacion">
+                <div>
+                    <img class="responsiv" src="{{url_for('static', filename='recourses/background-donar-responsive.png')}}"/>
+                    <img class="no-responsiv" src="{{url_for('static', filename='recourses/background-donar-no-responsive.png')}}"/>
+                </div>
+                <form method="GET" action="" id='frmDonB'>
+                    <button type="button" onclick="submition('frmRec', '{{url_for('donar')}}');" class="btn">&iexcl;Quiero donar!</button>
+                </form>
+            </div>
+            <div class="section" id="tienda">
+                <div>
+                    <img class="responsiv" src="{{url_for('static', filename='recourses/background-tienda.png')}}"/>
+                </div>
+                <form method="GET" action="" id='frmStor'>
+                    <button type="button" onclick="submition('frmStor', 'https://adoracionysanidad.mercadoshops.com.co/');" class="btn">Ir a la Tienda</button>
+                </form>
+            </div>
+            <div class="section" id="streaming">
+                <div class="organiz">
+                    <img src="{{url_for('static', filename='recourses/banner-adoracion.png')}}"/>
+                    <img src="{{url_for('static', filename='recourses/banner-sanidad.png')}}"/>
+                </div>
+                <p>{{transmic}}</p>
+                <form method="GET" action="" id='frmStrm'>
+                    <!--button type="button" onclick="submition('frmStrm', '{{url_for('stream')}}');" class="btn">Ir a la transmisi&oacute;n</button-->
+                    <button type="button" onclick="submition('frmStrm', 'https://www.youtube.com/playlist?list=PLOjOPainLluuoFTvxcjHFMjaLtJM7VTtv', 1);" class="btn">Ir a la transmisi&oacute;n</button>
+                </form>
+            </div>
+            <div class="section" id="followus">
+                <form method="GET" action="" id="frmUs">
+                    <p>Suscr&iacute;bete a nuestro bolet&iacute;n y recibe toda la info.</p>
+                    <button type="button" onclick="submition('frmUs', 'https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform',1);">Suscribirse</button>
+                    <span>Redes</span>
+                    <div class="organiz" id="redes">
+                        <div class="organiz-ever">
+                            <button type="button" onclick="submition('frmUs', 'https://www.youtube.com/channel/UClGroRA_lBUnH0S1MKjNn_A/featured',1);"  id="Ytb" >
+                                <img src="{{url_for('static', filename='recourses/icon-Ytb.png')}}"/>
+                            </button>
+                            <button type="button" onclick="submition('frmUs', 'https://www.facebook.com/adoracionysanidad/',1);"  id="Fcb" >
+                                <img src="{{url_for('static', filename='recourses/icon-Fcb.png')}}"/>
+                            </button>
+                        </div>
+                        <div class="organiz-ever">
+                            <button type="button" onclick="submition('frmUs', 'https://www.instagram.com/adoracionysanidad/',1);">
+                                <img src="{{url_for('static', filename='recourses/icon-Ing.png')}}"/>
+                            </button>
+                            <button type="button" onclick="submition('frmUs', 'https://music.apple.com/album/1503772539?app=music',1);">
+                                <img src="{{url_for('static', filename='recourses/icon-iTn.png')}}"/>
+                            </button>
+                        </div>
+                        <div class="organiz-ever">
+                            <button type="button" onclick="submition('frmUs', 'https://open.spotify.com/album/5LRv8XpjN1dntqQAjjGe46',1);">
+                                <img src="{{url_for('static', filename='recourses/icon-Spf.png')}}"/>
+                            </button>
+                            <button type="button" onclick="submition('frmUs', 'https://sl.onerpm.com/7361887494',1);">
+                                <img src="{{url_for('static', filename='recourses/icon-Add.png')}}"/>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+{%endblock%}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - Donaciones</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main13.css')}}"/>
+{%endblock%}
+{%block content%}
+        <div class="content" id="content">
+        <div class="separator"></div>
+        <div class="organiz">
+            <!--div>
+                <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+                <iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/adoracionysanidad?default_interval=m" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%">
+                </iframe>
+            </div-->
+            <div>
+                <form id="frmPy">
+                    <span>Paypal</span>
+                    <img src="{{url_for('static', filename='recourses/icon-donac-paypal.png')}}"/>
+                    <button type="button" onclick="submition('frmPy', 'https://adoracionysanidad.mercadoshops.com.co/listado/musica-peliculas-series/otros/');">
+                        <span class="titulo">Donar con Paypal</span>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <form id="frmMP">
+                    <span>Mercado Pago</span>
+                    <img src="{{url_for('static', filename='recourses/icon-donac-pago.png')}}"/>
+                    <button type="button" onclick="submition('frmMP', 'https://adoracionysanidad.mercadoshops.com.co/listado/musica-peliculas-series/otros/');">
+                        <span class="titulo">Donar con Mercado Pago</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+{%endblock%}

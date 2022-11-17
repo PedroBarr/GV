@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - Recursos</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main7.css')}}"/>
+{%endblock%}
+{%block content%}
+        <div class="content" id="content">
+            <div class="section">
+                <form class="organiz" id="frmRecour">
+                    <div class="product-view">
+                        <span>Adoraci&oacute;n y Sanidad</span>
+                        <img src="{{url_for('static', filename='recourses/icon-form-blog.png')}}"/>
+                        <button type="button" onclick="submition('frmRecour', '{{url_for('blog')}}');">Ir al Blog</button>
+                    </div>
+                    <div class="product-view">
+                        <span>Notas con mensajes </span>
+                        <img src="{{url_for('static', filename='recourses/icon-form-contacto.png')}}"/>
+                        <button type="button" onclick="submition('frmRecour', 'https://wordpress.com/pages/adoracionysanidad.wordpress.com');">Ir al Blog</button>
+                    </div>
+                    <div class="product-view">
+                        <span>Youtube</span>
+                        <img src="{{url_for('static', filename='recourses/icon-form-youtube.png')}}"/>
+                        <button type="button" onclick="submition('frmRecour', 'https://www.youtube.com/channel/UClGroRA_lBUnH0S1MKjNn_A/featured');">Ir al Canal</button>
+                    </div>
+                </form>
+            </div>
+{%endblock%}

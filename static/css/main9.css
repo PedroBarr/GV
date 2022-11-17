@@ -1,0 +1,335 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: #fc0;
+}
+
+/*Nav bar*/
+#navbar{
+font-family: Calibri;
+}
+.navbar{
+display: flex;
+width:100%;
+overflow:hidden;
+position:fixed;
+top:0;
+left:0;
+margin: 0;
+text-align: center;
+background: #000;
+z-index: 5;
+}
+.navbar form{
+display: flex;
+width:100%;
+overflow:hidden;
+position:fixed;
+top:0;
+left:0;
+margin: 0;
+text-align: center;
+background: #000;
+z-index: 5;
+}
+.navbar *{
+background: rgba(0, 0, 0, 0);
+color: #fc0;
+}
+.navbar div{
+text-align: center;
+display: inline-block;
+}
+.navbar button{
+background: rgba(0, 0, 0, 0);
+font-size: 100%;
+font-family: "aileron heavy";
+border: none;
+}
+.nav-logo{
+width: 100%;
+}
+.nav-logo button{
+width: 20%;
+margin:0;
+margin-left:80%;
+}
+.nav-logo img{
+width: 100%;
+}
+.navbar .nav-log{
+width: 100%;
+display: flex;
+}
+.nav-log button{
+width: auto;
+margin: auto;
+font-size: 100%;
+background: #202020;
+border-radius: 8px;
+display:none;
+}
+.nav-log button img{
+max-width:41px;
+}
+@media screen and (max-width:760px){
+    .nav-logo button{
+    height: 100%;
+    width:auto;
+    max-width:30%;
+    margin:auto;
+    }
+    .navbar .nav-log{
+    width: 100%;
+    display: none;
+    }
+    .nav-log button{
+    width: 100%;
+    margin:1%;
+    }
+    .nav-log button img{
+    max-width:21px;
+    }
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 6%;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+padding:10% 0;
+width: 100%;
+display: block;
+background: #fff;
+}
+.banner{
+width: 100%;
+}
+.organiz{
+display: flex;
+}
+.respons{
+display: none;
+}
+img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    .content{
+        margin-top: 15%;
+    }
+    .organiz{
+    display: block;
+    }
+}
+.search{
+width:100%;
+background:#555;
+padding:1%;
+display:none;
+}
+.search input[type="text"]{
+width:70%;
+background:linear-gradient(to right, #000,#000,#555) 5% calc(90%)/calc(90%) 5% no-repeat;
+border:none;
+}
+.search button{
+width:25%;
+background: #ddd;
+border:none;
+border-radius:8px;
+}
+.search button *{
+background: #ddd0;
+}
+@media screen and (max-width:760px){
+    .search input[type="text"]{
+    height:30px;
+    }
+    .search button{
+    width:50%;
+    margin:0;
+    margin-left:30%;
+    }
+}
+.view-curso{
+width:90%;
+margin:auto;
+background: #fff0;
+}
+.view-curso *{
+margin:auto;
+background: #fff0;
+color:#000;
+}
+.view-curso div{
+width:100%;
+}
+.view-curso div img{
+margin: auto 10% auto 20%;
+width:70%;
+}
+.view-curso div span{
+display:block;
+width: 100%;
+text-align:left;
+}
+.view-curso div .programa{
+font-family:"aileron";
+font-size:100%;
+}
+.view-curso div .titulo{
+padding-bottom:5%;
+font-family:"playlist script";
+font-size:250%;
+}
+.view-curso div p{
+padding:3%;
+font-family:"aileron";
+font-size:150%;
+color:#777;
+line-height:1.5;
+text-align:justify;
+}
+.view-curso div button{
+margin:5% auto;
+padding:3%;
+font-family:"aileron heavy";
+font-size:100%;
+background: rgb(253,239,79);
+border:none;
+border-radius:10px;
+width:40%;
+}
+@media screen and (max-width:760px){
+    .view-curso div img{
+    margin:10% auto;
+    width:90%;
+    }
+    .view-curso div .titulo{
+    padding-bottom:5%;
+    font-family:"playlist script";
+    font-size:200%;
+    }
+}
+.alert{
+background:#fff;
+width:100%;
+padding: 15% 0;
+}
+.alert *{
+display:block;
+background:#fff0;
+}
+.alert span{
+font-family: "aileron heavy";
+font-size:200%;
+color:rgb(253,239,79);
+}
+.alert button{
+width:60%;
+margin: 5% auto;
+background: #000;
+border:none;
+border-radius:8px;
+}
+
+/*Bottom*/
+.bottom{
+font-family: "aileron heavy";
+color: white;
+background: gray;
+background-image:url("../recourses/banner-bottom.png");
+background-size: contain;
+background-position: 100% 100%;
+background-repeat: no-repeat;
+width:100%;
+padding: 14px 0s 5px;
+}
+.col-bottom{
+display: flex;
+}
+.bottom div, .bottom div *{
+margin: 0 auto;
+font-family: "aileron heavy";
+color: white;
+background: rgba(255, 200, 0, 0);
+}
+.col span{
+font-size: 110%;
+display: block;
+margin: 20px auto;
+width:100%;
+text-align:left;
+}
+.col a{
+width:100%;
+font-size: 100%;
+display: block;
+color: white;
+text-align: left;
+padding: 5px 0;
+text-decoration: none;
+}
+#copyright{
+font-size: 80%;
+display:block;
+padding: 0 5% 1%;
+margin-top: 5%;
+opacity: 0.7;
+width:90%;
+text-align:left;
+}
+@media screen and (max-width:760px){
+    .col span{
+    font-size: 90%;
+    margin: 0 auto 10px;
+    }
+    .col a{
+    width:100%;
+    font-size: 70%;
+    }
+    .col-bottom{
+    display: block;
+    }
+    div.out-title, div.title{
+    margin-top: 10px;
+    }
+    .bottom{
+    background-position: 100% 85%;
+    }
+}

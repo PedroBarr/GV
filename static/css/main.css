@@ -1,0 +1,430 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: rgb(253,239,79);
+}
+
+/*Content*/
+.separator{
+width:100%;
+height: 50px;
+}
+@media screen and (max-width:760px){
+    .separator{
+    height: 60px;
+    }
+}
+.content{
+width: 100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 3%;
+font-family: "aileron", "raleway heavy", Arial;
+color: rgb(253,239,79);
+font-size: 100%;
+}
+.section{
+display: block;
+width:100%;
+text-align: center;
+}
+.section *{
+margin: 0 auto;
+background: rgba(51, 153, 255, 0);
+}
+.section span{
+font-family: Calibri;
+display: block;
+font-size:425%;
+padding: 0;
+position: relative;
+font-family: "siffon outline";
+}
+.max-span{
+width: 100%;
+}
+.section p{
+color:white;
+font-family: Calibri;
+display: block;
+font-size:150%;
+}
+.content button{
+background: rgb(253,239,79);
+font-size: 100%;
+font-family: "aileron heavy";
+color: black;
+border: none;
+border-radius: 8px;
+margin-top: 14px;
+padding: 10px;
+width: 20%;
+/*font-size:100%;*/
+}
+@media screen and (max-width:760px){
+    .content{
+    margin-top: 8%;
+    }
+}
+#bienvenida{
+background: #fff;
+background-size: cover;
+background-position: 0% 0%;
+padding-top: 8%;
+padding-bottom: 8%;
+}
+#bienvenida p{
+color: #000;
+width: 95%;
+margin:auto;
+margin-top: 5px;
+font-family: "aileron heavy";
+text-align: justify;
+text-align-last: justify;
+}
+#bienvenida img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    #bienvenida{
+    padding-top:30%;
+    padding-bottom:30%;
+    }
+    #bienvenida p{
+    width: 90%;
+    margin-top: 5px;
+    }
+    #bienvenida img{
+    width: 100%;
+    }
+    #bienvenida p{
+    font-size: 120%;
+    }
+}
+#escuela{
+padding-top:15%;
+padding-bottom:7%;
+}
+#escuela div{
+display: flex;
+width: 100%;
+}
+#escuela div *{
+width:30%;
+margin: 0;
+}
+#escuela div img{
+margin-left: 5%;
+width:45%;
+}
+#escuela div p{
+margin: auto;
+margin-left: 5%;
+text-align:justify;
+}
+@media screen and (max-width:760px){
+    #escuela{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+    #escuela div{
+    display: block;
+    width:100%;
+    }
+    #escuela div *{
+    width:80%;
+    }
+    #escuela div img{
+    margin:0 auto;
+    width:90%;
+    }
+    #escuela div p{
+    margin:0 auto;
+    }
+}
+#musica, #recursos{
+background:#fff;
+color: #000;
+padding-top: 10%;
+padding-bottom: 7%;
+}
+#musica .responsiv, #recursos .responsiv{
+display: none;
+}
+#musica div, #musica div{
+display: block;
+width: 90%;
+}
+#musica img, #recursos img{
+width: 100%;
+}
+#musica form{
+background:#fff0;
+margin:0 5%;
+}
+#musica p{
+background:#fff0;
+color: #000f;
+}
+@media screen and (max-width:760px){
+    #musica, #recursos{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+    .content button{
+    padding: 8px 0;
+    width: 40%;
+    }
+    #musica + #recursos .responsiv{
+    display: block;
+    }
+    #musica + #recursos .no-responsiv{
+    display: none;
+    }
+    #recursos{
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+    }
+    #recursos img{
+    width:95%;
+    margin-left:0;
+    }
+}
+#eventos{
+background: rgb(253,213,78);
+color: #000;
+padding-top: 15%;
+padding-bottom: 8%;
+}
+#eventos .responsiv{
+display: none;
+}
+#eventos div{
+display: block;
+width: 70%;
+margin-right:30%;
+}
+#eventos button{
+background: #000;
+color: rgb(253,213,78);
+}
+#eventos img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    #eventos{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+    #eventos .responsiv{
+    display:block;
+    }
+    .content button{
+    padding: 8px 0;
+    width: 40%;
+    }
+    #eventos .no-responsiv{
+    display: none;
+    }
+    #eventos div{
+    width:100%;
+    margin: auto 0;
+    }
+}
+#donacion{
+background: rgb(255,255,255);
+color: #000;
+padding-top: 15%;
+padding-bottom: 8%;
+}
+#donacion .responsiv{
+display: none;
+}
+#donacion div{
+display: block;
+width: 90%;
+margin: auto 5% 5%;
+}
+#donacion img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    #donacion{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+    #donacion .responsiv{
+    display:block;
+    }
+    #donacion .no-responsiv{
+    display: none;
+    }
+    #donacion div{
+    width:100%;
+    margin: auto 0 7%;
+    }
+}
+#tienda{
+background: rgb(0,0,0);
+color: rgb(253,239,79);
+padding-top: 15%;
+padding-bottom: 6%;
+}
+#tienda div{
+display: block;
+width: 80%;
+margin: auto auto 5%;
+}
+#tienda img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    #tienda{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+    #tienda div{
+    width:100%;
+    margin: auto;
+    margin-bottom:7%;
+    }
+}
+#streaming{
+background: #fff;
+color:#000;
+padding-top: 20%;
+padding-bottom: 10%;
+}
+#streaming *{
+color: #000;
+display: block;
+margin: auto;
+}
+#streaming p{
+width: 60%;
+margin-top: 0.2%;
+margin-left: 30%;
+font-size: 120%;
+}
+#streaming button{
+margin: 2% auto 5%;
+}
+#streaming div{
+display: flex;
+}
+#streaming img{
+width: 50%;
+margin: 0;
+}
+@media screen and (max-width:760px){
+    #streaming{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    }
+#streaming div{
+    display: block;
+    width:100%;
+    }
+    #streaming img{
+    width: 100%;
+    }
+}
+div.organiz,div.organiz-ever{
+display: flex;
+}
+#followus p{
+color: #000;
+}
+#followus span{
+font-family: "aileron Heavy";
+color:#000;
+font-size:120%;
+text-align: left;
+width: 80%;
+}
+#followus button{
+background: rgb(253,239,79);
+}
+#redes button{
+background: rgb(0,0,0,0);
+display: flex;
+width: 25%;
+padding: 0;
+}
+#redes img{
+width: 100%;
+}
+#followus{
+background: #fff;
+background-image:url("../recourses/background-seguidores-de-jesucristo.png");
+background-repeat: no-repeat;
+background-size: 25% auto;
+background-position: 90% 100%;
+padding-bottom:1%;
+}
+#followus *{
+background: rgba(51, 153, 255, 0);
+}
+#redes{
+width: 80%;
+margin-bottom:5%;
+}
+#redes #Ytb{
+width: 50%;
+}
+#redes #Fcb{
+width: 15%;
+}
+@media screen and (max-width:760px){
+    #redes {
+    width: 60%;
+    }
+    div.organiz{
+    display: block;
+    }
+    #followus{
+    background-size: 70% auto;
+    background-position: 50% 100%;
+    padding-bottom:15%;
+    }
+    #redes #Ytb{
+    width: 40%;
+    margin:0;
+    }
+    #redes #Fcb{
+    width: 25%;
+    }
+    #followus span{
+    text-align:center;
+    font-size: 425%;
+    }
+}

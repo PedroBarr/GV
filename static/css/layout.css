@@ -1,0 +1,174 @@
+/*Nav bar*/
+.navbar{
+background: #000;
+color: #fc0;
+font-family: Calibri;
+font-size: 120%;
+width:100%;
+overflow:hidden;
+position:fixed;
+margin: 0;
+top:0;
+left:0;
+padding: 0;
+text-align: center;
+display: block;
+z-index: 5;
+}
+.navbar button{
+border: none;
+padding:0;
+}
+.navbar div, .navbar div *{
+color:#fdd54f;
+text-align: center;
+display: inline-block;
+}
+.navbar .logo{
+font-family: "siffon outline";
+margin: 0 10%;
+width: 10%;
+overflow: hidden;
+padding: 0;
+}
+.navbar .logo *{
+width: 100%;
+}
+.navbar .logo span{
+width: 100%;
+display:block;
+font-size:150%;
+font-family:"siffon outline";
+color:#fdd54f;
+}
+.navbar .menu{
+margin:0;
+overflow: hidden;
+width: 60%;
+padding: 0;
+}
+.navbar .menu *{
+background: rgba(51, 153, 255, 0);
+}
+.navbar .menu button {
+float: right;
+display: inline-block;
+text-align: center;
+padding: 1%;
+font-family:calibri;
+font-size:88%;
+}
+.navbar .menu button:hover, .navbar .logo span:hover {
+color: #ff0;
+}
+.navbar .icon {
+display: none;
+}
+@media screen and (max-width:760px){
+    .navbar .logo{
+    width: 60%;
+    margin: 0 15%;
+    }
+    .navbar .menu{
+    display: none;
+    }
+    .navbar .menu button {
+    padding: 5%;
+    }
+    .navbar .icon {
+    display: inline-block;
+    width:15%;
+    }
+    .navbar .icon *{
+    width:100%;
+    }
+    .menu.responsive{
+    display: block;
+    width: 100%;
+    }
+    .menu.responsive button{
+    width:100%;
+    display: block;
+    }
+    .navbar .logo{
+    display: inline-block;
+    width: 30%;
+    margin: 0 10%;
+    }
+}
+
+
+/*Bottom*/
+.bottom{
+font-family: "aileron heavy";
+color: white;
+background: gray;
+background-image:url("../recourses/banner-bottom.png");
+background-size: contain;
+background-position: 100% 100%;
+background-repeat: no-repeat;
+width:100%;
+padding: 14px 0 5px;
+}
+.bottom form{
+margin: 0 auto;
+font-family: "aileron heavy";
+color: white;
+background: rgba(255, 200, 0, 0);
+}
+.col-bottom{
+display: flex;
+}
+.bottom div, .bottom div *{
+margin: 0 auto;
+font-family: "aileron heavy";
+color: white;
+background: rgba(255, 200, 0, 0);
+}
+.col.title span{
+font-size: 110%;
+display: block;
+margin: 20px auto 30px;
+text-align:left;
+}
+.col a{
+width:100%;
+font-size: 100%;
+display: block;
+color: white;
+text-align: left;
+padding: 5px 0;
+text-decoration: none;
+}
+#copyright{
+font-size: 80%;
+margin: 3%;
+margin-top: 5%;
+opacity: 0.7;
+text-align:left;
+}
+div.out-title{
+margin-top: 60px;
+}
+@media screen and (max-width:760px){
+    .col span{
+    font-size: 90%;
+    margin: 0 auto 3%;
+    }
+    .col a{
+    width:100%;
+    font-size: 70%;
+    }
+    .bottom{
+    width:100%;
+    }
+    .col-bottom{
+    display: block;
+    }
+    div.out-title, div.title{
+    margin-top: 10px;
+    }
+    .bottom{
+    background-position: 100% 85%;
+    }
+}

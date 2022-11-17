@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <title>Cantico Nuevo - {{crss.nom_curs}}</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main10.css')}}"/>
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="nav-logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}');">
+                        <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    </button>
+                </div>
+                <div class="nav-log">
+                    {% if current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('profile')}}');">
+                            <img src="{{current_user.image_usu}}">
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('logout')}}');">salir</button>
+                    {% endif %}
+                    {% if not current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('login')}}');">
+                            Inicio de Sesion
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('signin')}}');">
+                            Registrate
+                        </button>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+        <script>
+            function replegar() {
+                var x = document.getElementById("despleg-cursos");
+                x.className = "desplegable pleg";
+            }
+            function desplegar(id) {
+                var x = document.getElementById(id);
+                if (x.className === "desplegable") {
+                    x.className += " pleg";
+                } else {
+                    x.className = "desplegable";
+                }
+            }
+            function makemesub(id, func){
+                var x = document.getElementById(id);
+                x.setAttribute("onclick", func);
+            }
+        </script>
+        <div class="content" id="content">
+            <div class="search">
+                <input type="text" class="desplegable pleg" placeholder="Buscar en Cantico Nuevo..." id="searchspace" name="searchspace"/>
+                <button type="button" onclick="desplegar('searchspace'); makemesub('searchnavbar', submition('frmMenu', '{{url_for('searchcourse')}}'));" id="searchnavbar">
+                    <label>&#128270;</label>
+                </button>
+            </div>
+            <div class="section" id="presentacion">
+                <span class="title-sec">{{crss.nom_curs}}</span>
+                <span class="desc">{{crss.descprg_curs}}</span>
+                {%if prfs%}
+                    <div class="prev-prof">
+                        <img src="{{prfs[0].image_usu}}"/>
+                        <span>{{prfs[0].nom_usu}} {{prfs[0].ape_usu}}</span>
+                    </div>
+                {%endif%}
+                <!--button {%if not prfs%} disabled {%endif%}>Empezar</button-->
+                <button type="button" onclick="submition('frmMenu', 'https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform');">Empezar</button>
+            </div>
+            <div class="pestanas organiz">
+                <a href="#descripc">Descripcion</a>
+                <a href="#program">Programa</a>
+                <a href="#instruc">Instructores</a>
+                <a href="#pregfrec">Preguntas Frecuentes</a>
+            </div>
+            <div class="section" id="decripc">
+                <span class="title-sec">Descripci&oacute;n</span>
+                <p>{{crss.desc_curs}}</p>
+            </div>
+            <div class="section" id="program">
+                <form id="frmPrg">
+                    <span class="title-sec">Programa</span>
+                    <p>Que aprender&aacute;s en este curso:</p>
+                    <div>
+                        <span>Descarga el Plan de estudios en el siguiente bot&oacute;n</span>
+                        <button onclick="submition('frmPrg', '{{crss.prg_curs}}',1);">Descarga el Plan</button>
+                    </div>
+                </form>
+            </div>
+            <div class="section" id="plan">
+                <span class="title-sec">Plan de Estudios</span>
+                <img src="{{crss.imaprg_curs}}"/>
+            </div>
+            {%if mdds%}
+            <div class="section" id="mods">
+                <span class="title-sec">Modalidades disponibles</span>
+                {%for md in mdds%}
+                    <span>&rsaquo;&nbsp;{{md}}</span>
+                {%endfor%}
+            </div>
+            {%endif%}
+            <div class="section" id="indgrp">
+                <span class="title-sec">Tipos</span>
+                <span>&rsaquo;&nbsp;Individual</span>
+                <span>&rsaquo;&nbsp;Grupos</span>
+                <span>&rsaquo;&nbsp;Clases particulares</span>
+            </div>
+            {%if prfs%}
+            <div class="section" id="instruc">
+                <span class="title-sec">Instructores disponibles</span>
+                {%for ins in prfs%}
+                    <div class="instrs organiz">
+                        <div>
+                            <img src="{{ins.image_usu}}"/>
+                        </div>
+                        <div>
+                            <span class="title-sec">{{ins.nom_usu}}&nbsp;{{ins.ape_usu}}</span>
+                            <span>{{ins.prof_usu}}</span>
+                            <p>{{ins.almater_usu}}<p>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+            {%endif%}
+            <div class="section" id="forzar-al-usuario">
+                <button type="button" onclick="submition('frmMenu', 'https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform');">Empezar</button>
+            </div>
+            <div class="bottom" id="contacto">
+                <div class="col-bottom">
+                    <div class="col">
+                        <span>C&aacute;ntico Nuevo</span>
+                        <br/>
+                        <a href="{{url_for('index')}}">Adoraci&oacute;n y Sanidad</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases particulares</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases grupales</a>
+                        <a href="{{url_for('course', id_curs=1)}}">Curso Preparatorio Musical</a>
+                        <a href="{{url_for('ourcourses')}}">Cursos</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para iglesias</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para empresas</a>
+                    </div>
+                    <div class="col">
+                    </div>
+                    <div class="col">
+                        <span>M&aacute;s</span>
+                        <br/>
+                        <a href="{{url_for('privacity')}}">T&eacute;rminos</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Contacto</a>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+                <div id="copyright">
+                    <span>&trade;C&aacute;ntico Nuevo Todos los Derechos Reservados 2020</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            function submition(frmId, next, newTab) {
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+                replegar();
+            }
+        </script>
+	</body>
+</HTML>

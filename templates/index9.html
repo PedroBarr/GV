@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge"/>
+        <title>Cantico Nuevo - Cursos</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main9.css')}}"/>
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <form method="GET" action="" id="frmMenu">
+                <div class="nav-logo">
+                    <button type="button" onclick="submition('frmMenu', '{{url_for('school')}}');">
+                        <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                    </button>
+                </div>
+                <div class="nav-log">
+                    {% if current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('profile')}}');">
+                            <img src="{{current_user.image_usu}}">
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('logout')}}');">salir</button>
+                    {% endif %}
+                    {% if not current_user.is_authenticated %}
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('login')}}');">
+                            Inicio de Sesion
+                        </button>
+                        <button type="button" onclick="submition('frmMenu', '{{url_for('signin')}}');">
+                            Registrate
+                        </button>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+        <script>
+            function replegar() {
+                var x = document.getElementById("despleg-cursos");
+                x.className = "desplegable pleg";
+            }
+            function desplegar(id) {
+                var x = document.getElementById(id);
+                if (x.className === "desplegable") {
+                    x.className += " pleg";
+                } else {
+                    x.className = "desplegable";
+                }
+            }
+            function makemesub(id, func){
+                var x = document.getElementById(id);
+                x.setAttribute("onclick", func);
+            }
+        </script>
+        <div class="content" id="content">
+            <div class="search">
+                <input type="text" class="desplegable pleg" placeholder="Buscar en Cantico Nuevo..." id="searchspace" name="searchspace"/>
+                <button type="button" onclick="desplegar('searchspace'); makemesub('searchnavbar', submition('frmMenu', '{{url_for('searchcourse')}}'));" id="searchnavbar">
+                    <label>&#128270;</label>
+                </button>
+            </div>
+            {%if cursos%}
+                {%for cur in cursos%}
+                    <div class="section">
+                        <div class="view-curso organiz">
+                            <div>
+                                <img class="imagen-desc" src="{{cur.ima_curs}}" alt="{{cur.nom_curs}}"/>
+                            </div>
+                            <div>
+                                <form id="frmCurs{{cur.id_curs}}">
+                                    <span class="programa">{{cur.descprg_curs}}</span>
+                                    <span class="titulo">{{cur.nom_curs}}</span>
+                                    <p class="desc">{{cur.imadesc_curs}}</p>
+                                    <button type="button" onclick="submition('frmCurs{{cur.id_curs}}', '{{url_for('course', id_curs=cur.id_curs)}}');">Leer m&aacute;s</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            {%else%}
+                <div class="alert">
+                <form id="frmRet">
+                        <span class="titulo">A&uacute;n no hay cursos disponibles</span>
+                        <button type="button" onclick="submition('frmRet', '{{url_for('school')}}');">
+                            <span>Volver a...</span>
+                            <img src="{{url_for('static', filename='recourses/logo-cantico-nuevo.png')}}"/>
+                        </button>
+                    </form>
+                </div>
+            {%endif%}
+                <div class="section">
+                    <div class="view-curso organiz">
+                        <div>
+                            <img class="imagen-desc" src="{{url_for('static', filename='recourses/cursos/img-tecnica-vocal.png')}}" alt="contacto"/>
+                        </div>
+                        <div>
+                            <form id="frmCursid">
+                                <span class="programa">Contactanos</span>
+                                <span class="titulo">T&eacute;cnica Vocal y m&aacute;s cursos</span>
+                                <p class="desc">Contacta con nosotros para informarte de m&aacute;s cursos en nuestra escuela.</p>
+                                <button type="button" onclick="submition('frmCursid', 'https://forms.gle/WxFCTxKiMtAETbCm8');">Contacto</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom" id="contacto">
+                    <div class="col-bottom">
+                        <div class="col">
+                            <span>C&aacute;ntico Nuevo</span>
+                            <br/>
+                            <a href="{{url_for('index')}}">Adoraci&oacute;n y Sanidad</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases particulares</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Clases grupales</a>
+                            <a href="{{url_for('course', id_curs=1)}}">Curso Preparatorio Musical</a>
+                            <a href="{{url_for('ourcourses')}}">Cursos</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para iglesias</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Para empresas</a>
+                        </div>
+                        <div class="col">
+                        </div>
+                        <div class="col">
+                            <span>M&aacute;s</span>
+                            <br/>
+                            <a href="{{url_for('privacity')}}">T&eacute;rminos</a>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRi8p_fpZJe3zDEMjHsM7mf30nKh2tAMW86aqOqEEvVmC2Ew/viewform">Contacto</a>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                    <div id="copyright">
+                        <span>&trade;C&aacute;ntico Nuevo Todos los Derechos Reservados 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function submition(frmId, next, newTab) {
+                if (newTab==1){
+                var w = window.open(next, '_blank');
+                w.focus();
+                }else{
+                var x = document.getElementById(frmId);
+                x.setAttribute("action", next);
+                x.submit();
+                }
+                desplegar();
+            }
+        </script>
+	</body>
+</HTML>

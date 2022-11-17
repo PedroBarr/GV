@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+	</head>
+	<body>
+        <div class="navbar" id="navbar">
+            <div class="menu" id="menu">
+                <div class="logo">
+                    <a href="#content" onclick="replegar()">Adoraci&oacute;n &amp; Sanidad</a>
+                </div>
+                <a href="#escuela" onclick="desplegar()">Escuela</a>
+                <a href="#musica" onclick="desplegar()">M&uacute;sica</a>
+                <a href="#recursos" onclick="desplegar()">Recursos</a>
+                <a href="#eventos" onclick="desplegar()">Eventos</a>
+                <a href="#tienda" onclick="desplegar()">Tienda</a>
+                <a href="javascript:void(0);" class="icon" onclick="desplegar()">
+                    &Xi;
+                </a>
+            </div>
+        </div>
+        <script>
+            function replegar() {
+                var x = document.getElementById("menu");
+                x.className = "menu";
+            }
+            function desplegar() {
+                var x = document.getElementById("menu");
+                if (x.className === "menu") {
+                    alert
+                    x.className += " responsive";
+                } else {
+                    x.className = "menu";
+                }
+            }
+        </script>
+
+        <div class="separator"></div>
+        <div class="embed-responsive">
+            <!--<iframe frameborder='0' noresize='noresize'
+            style='position: absolute; background: transparent; width: 100%;
+            height:100%;' src="https://segamiramar.wordpress.com/"
+            frameborder="0"></iframe>-->
+            <!--<iframe src="https://www.facebook.com/plugins/video.php?href=
+            https%3A%2F%2Fwww.facebook.com%2FRemavidInt%2Fvideos%2F2571306483123772%2F&show_text=0&width=560"
+            width="560" height="315" style="border:none;overflow:hidden"
+            scrolling="no" frameborder="0" allowTransparency="true"
+            allowFullScreen="true"></iframe>-->
+            <!--iframe width="560" height="315"
+            src="https://www.youtube.com/embed/TMFVAd0qf4c" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe-->
+        </div>
+    </body>
+</HTML>

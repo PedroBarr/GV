@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - M&uacute;sica</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main4.css')}}"/>
+{%endblock%}
+{%block content%}
+        <div class="content" id="content">
+            <div class="section banner" id="bienvenida">
+                <img class="no-respons" src="{{url_for('static', filename='recourses/background-about-no-responsive.png')}}"/>
+                <img class="respons" src="{{url_for('static', filename='recourses/background-about-responsive.png')}}"/>
+            </div>
+            <div class="section organiz" id="isaias">
+                <div>
+                    <p>"<u>El Esp&iacute;ritu de Jehov&aacute; el Se&ntilde;or est&aacute; sobre m&iacute;,</u><small>porque me ungi&oacute; Jehov&aacute;; me ha enviado a predicar <strong>buenas nuevas </strong>a los abatidos, a <strong>vendar </strong>a los <strong>quebrantados de coraz&oacute;n</strong>, a publicar <strong>libertad a los cautivos</strong>, y a los presos <strong>apertura de la c&aacute;rcel</strong>; a proclamar el a&ntilde;o de la buena voluntad de Jehov&aacute;, y el d&iacute;a de venganza del Dios nuestro; a <strong>consolar </strong>a todos los enlutados; a <u><strong>ordenar </strong></u>que a los afligidos de Sion se les d&eacute; <strong>gloria en lugar de ceniza, &oacute;leo de gozo</strong> en lugar de luto, <strong>manto de alegr&iacute;a </strong>en lugar del esp&iacute;ritu angustiado; y ser&aacute;n llamados <u><strong>&aacute;rboles de justicia</strong>,</u> plant&iacute;o de Jehov&aacute;, para gloria suya.</small> Reedificar&aacute;n <small>las ruinas antiguas, y</small></p>
+                    <p><strong>levantar&aacute;n </strong>los asolamientos primeros, y <strong>restaurar&aacute;n </strong>las ciudades arruinadas, los escombros de muchas generaciones."</p>
+                    <span>Isa&iacute;as 61: 1-4</span>
+                </div>
+                <img src="{{url_for('static', filename='recourses/banner-isaias.png')}}"/>
+            </div>
+            <div class="section banner" id="corona">
+                <img class="no-respons" src="{{url_for('static', filename='recourses/background-about-no-responsive-2.png')}}"/>
+                <img class="respons" src="{{url_for('static', filename='recourses/background-about-responsive-2.png')}}"/>
+            </div>
+            <div class="section organiz" id="corazon">
+                <img src="{{url_for('static', filename='recourses/background-mateo.png')}}"/>
+                <div>
+                    <p>Entendemos la relaci&oacute;n estrecha que hay entre la <em>Adoraci&oacute;n</em> y la <em>Sanidad</em> representada en pasajes como Mateo 8:1-3 en donde un leproso se postra ante Jes&uacute;s (acto de adoraci&oacute;n) y es sanado; as&iacute; mismo quienes son sanados adoran al Padre como en 2 Reyes 5: 1-17 en donde Naam&aacute;n el leproso al ser sanado declara que no hay Dios sino el Dios de Israel y que lo adorar&aacute; sol&oacute; a &Eacute;l. Del mismo modo podemos hablar de sanidad en los territorios cuando hubo adoraci&oacute; al Padre en los casos de David, Samuel, Mois&eacute;s y los Apostol&eacute;s.</p>
+                </div>
+            </div>
+            <div class="section banner" id="colorario">
+                <img class="no-respons" src="{{url_for('static', filename='recourses/background-about-no-responsive-3.png')}}"/>
+                <img class="respons" src="{{url_for('static', filename='recourses/background-about-responsive-3.png')}}"/>
+            </div>
+{%endblock%}

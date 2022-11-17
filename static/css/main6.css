@@ -1,0 +1,158 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: #fc0;
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 40px;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+width: 90%;
+display: block;
+}
+.banner{
+width: 100%;
+}
+.organiz{
+display: flex;
+}
+.respons{
+display: none;
+}
+img{
+width: 100%;
+}
+#titulo{
+margin: 0;
+background: #fff;
+width: 70%;
+padding:4% 15% 1%;
+}
+.cancion{
+background:#fff;
+margin:0;
+padding: 5% 5% 10%;
+}
+.cancion *{
+background:rgb(255,255,255,0);
+}
+.cancion .organiz{
+width:90%;
+margin: 5% auto;
+}
+.cancion .organiz div{
+margin:auto;
+}
+.cancion .organiz .cover img{
+width: 70%;
+}
+.cancion .organiz .data img{
+width: 100%;
+}
+.cancion .preview a{
+font-family: "playlist script";
+font-size: 300%;
+text-decoration: none;
+color:#000;
+}
+.cancion .preview .data{
+margin:auto;
+}
+.cancion .preview video{
+width:70%;
+}
+#redes{
+padding-bottom: 15%;
+background: #fff;
+}
+#redes *{
+background: #fff;
+color: #000;
+font-family: "aileron heavy";
+font-size: 150%;
+}
+#redes span{
+display:block;
+padding: 1% 0 5%;
+}
+#redes div{
+margin:auto;
+width: 70%;
+}
+#redes .organiz button{
+background:#fff0;
+border:none;
+width:auto;
+}
+#redes .organiz button img{
+width:80%;
+}
+@media screen and (max-width:760px){
+        .organiz{
+    display: block;
+    }
+    .respons{
+    display:block;
+    }
+    .no-respons{
+    display:none;
+    }
+    .cancion{
+    padding-top:1%;
+    }
+    .cancion .organiz div{
+    margin-bottom:10%;
+    }
+    .cancion .preview .organiz *{
+    display:inline-block;
+    margin:0 2%;
+    }
+    .cancion .preview .data,.cancion .preview video{
+    width: 100%;
+    }
+    #redes span{
+    font-size:100%;
+    }
+    #redes .organiz{
+    display: flex;
+    }
+    #redes .organiz button img{
+    width:100%;
+    }
+}

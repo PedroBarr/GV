@@ -1,0 +1,637 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+
+/*Nav bar*/
+#navbar{
+font-family: Calibri;
+font-size: 120%;
+}
+.navbar{
+display: block;
+width:100%;
+overflow:hidden;
+position:fixed;
+top:0;
+left:0;
+margin: 0;
+padding:1% 0;
+text-align: center;
+background: #000;
+z-index: 5;
+}
+.navbar *{
+background: rgba(0, 0, 0, 0);
+color: #fdd54f;
+max-height:40px;
+}
+.navbar div{
+text-align: center;
+display: inline-block;
+}
+.navbar button{
+background: rgba(0, 0, 0, 0);
+font-size: 100%;
+font-family: "aileron heavy";
+border: none;
+padding: 3px;
+margin: 2px;
+}
+.navbar input[type=text]{
+border: none;
+color: #fff;
+font-family: calibri;
+font-size: 100%;
+}
+.nav-logo{
+width: 10%;
+float: left;
+}
+.nav-menu{
+width: 20%;
+float: left;
+}
+.navbar .nav-search{
+width:50%;
+float:left;
+display:none;
+}
+div.respons-icon{
+display: none;
+}
+.nav-search input[type=text]{
+width: 80%;
+}
+.navbar .nav-log{
+width: 20%;
+float: left;
+display: flex;
+display: none;
+}
+.nav-log button{
+font-size: 70%;
+margin: 5%;
+background: #202020;
+border-radius: 8px;
+padding: 0;
+margin:0 auto;
+}
+.navbar div.desplegable{
+background: #000;
+display: block;
+position: fixed;
+margin: 0;
+margin-top: 35px;
+margin-left: 15%;
+border-radius:10px;
+max-height: none;
+}
+.navbar div.desplegable a{
+padding: 5px;
+display:block;
+text-decoration:none;
+}
+.navbar .desplegable.pleg{
+display: none;
+}
+@media screen and (max-width:760px){
+    .nav-logo{
+    width: 50%;
+    float: left;
+    }
+    .navbar .nav-menu, .navbar .nav-search, .navbar .nav-log{
+    display: none;
+    }
+    div.respons-icon{
+    display: block;
+    margin: 1%;
+    }
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 5%;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+width: 100%;
+display: block;
+}
+.banner img{
+width:80%;
+}
+.banner span{
+display: block;
+}
+#bienvenida{
+background: rgba(0, 0, 0, 1);
+padding-top:3%;
+padding-bottom:2%;
+}
+#bienvenida span{
+font-family: "playlist script";
+color: #fc0;
+margin: 0;
+font-size: 450%;
+display: block;
+position: relative;
+top: -60px;
+}
+@media screen and (max-width:760px){
+    #bienvenida{
+    padding: 10% 0;
+    }
+    #bienvenida span{
+    font-size: 225%;
+    top: -30px;
+    }
+    .content{
+    margin-top: 8%;
+    }
+}
+#presentacion{
+padding:10% 0 7%;
+}
+.title-padd{
+margin-bottom:1%;
+}
+.title-padd.responsiv{
+display: none;
+}
+.organiz{
+display: flex;
+}
+.produc-view img{
+width: 40%;
+}
+#presentacion .produc-view span{
+font-family: "aileron heavy";
+font-size: 120%;
+}
+#presentacion .produc-view  .produc-desc{
+width: 60%;
+font-size: 100%;
+padding: 0 10%;
+font-family: "aileron";
+margin: auto;
+}
+@media screen and (max-width:760px){
+    .title-padd.non-responsiv{
+    display: none;
+    }
+    .title-padd.responsiv{
+    display: block;
+    }
+    .title-padd span{
+    font-family:"playlist script";
+    font-size:300%;
+    color: #01c;
+    }
+    .title-padd p{
+    font-family:"aileron heavy";
+    font-size:100%;
+    }
+    .organiz{
+    display: block;
+    }
+    #presentacion .produc-view img{
+    width: 30%;
+    }
+    #presentacion .produc-view{
+    margin:15% 0;
+    }
+    @media screen and (max-width:360px){
+        .title-padd span{
+        font-size:200%;
+        }
+    }
+}
+#retaila{
+background:#000;
+}
+#retaila span{
+font-size: 300%;
+font-family: "siffon outline";
+color: #fc0;
+margin:0;
+padding: 3% 0;
+}
+@media screen and (max-width:760px){
+    #retaila{
+    padding:15% 0;
+    }
+    #retaila span{
+    font-size: 250%;
+    }
+}
+.goto-panel div{
+display: block;
+}
+.goto-panel div *{
+display: inline-flex;
+}
+#ourcourses button{
+width: 80%;
+margin:auto;
+background:#0000;
+border: none;
+}
+#ourcourses button span{
+display:inline-block;
+margin: auto 0;
+width: 70%;
+font-family: "aileron";
+font-size: 200%;
+color: #fff;
+text-decoration: underline;
+padding:1% 0;
+float:left;
+}
+#ourcourses button img{
+display:inline-block;
+width: 10%;
+height:32px;
+margin:auto;
+padding:2% 0;
+float:left;
+}
+#ourcourses img{
+display:inline-block;
+width: 10%;
+padding:1%;
+}
+#goto-courses-panel{
+padding: 7% 0;
+}
+#goto-courses-panel span{
+font-family: "aileron heavy";
+font-size: 400%;
+}
+#goto-courses-panel div *{
+max-height: 30px;
+}
+#goto-courses-panel div span{
+font-family: "aileron";
+font-size: 100%;
+color: #fff;
+text-decoration: underline;
+}
+#goto-courses-panel div button, #ourcourses-preview .goto-link button{
+background: rgba(0, 0, 0, 0);
+border: none;
+}
+.produc-preview{
+text-align: center;
+}
+#ourcourses{
+background-image:url("../recourses/background-ourcourses.png");
+background-repeat: no-repeat;
+background-size: 100% 30%;
+background-position: 0% 60%;
+padding:10% 0;
+}
+#ourcourses-preview .goto-panel{
+width: 80%;
+padding: 0 10%;
+}
+#ourcourses-preview .goto-panel img{
+width: 100%;
+display: block;
+padding:0;
+}
+#ourcourses-preview .goto-panel button{
+width: 100%;
+background:#06c;
+padding:0 1%;
+}
+#ourcourses-preview .goto-panel button span{
+display: inline-block;
+width: auto;
+margin:auto;
+margin-right:35%;
+background:#06c0;
+text-decoration:none;
+font-size:150%;
+padding:3% 0;
+}
+#ourcourses-preview .goto-panel button span.no-just-text{
+text-align:left;
+margin-right:0;
+font-size:200%;
+font-weight:bolder;
+padding:0;
+}
+#ourcourses-preview .goto-link, #ourcourses-preview .goto-link *{
+background: #06c;
+font-family: "aileron", calibri;
+font-size: 100%;
+color: #fff;
+}
+#goto-courses-panel .goto-link span{
+color: #fff;
+font-size: 200%;
+}
+@media screen and (max-width:760px){
+    #ourcourses{
+    padding: 19% 0;
+    background-image:none;
+    }
+    #goto-courses-panel button{
+    background-image:url("../recourses/background-ourcourses.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    padding-bottom: 1%;
+    width:100%;
+    }
+    #ourcourses-preview .produc-preview{
+    width: 80%;
+    margin: 5% auto;
+    }
+}
+#ourequipos, #ourmodalidad{
+padding:8% 0;
+}
+#ourequipos .produc-view, #ourmodalidad .produc-view{
+width:90%;
+font-family: "aileron", calibri;
+margin: auto 5%;
+text-align: left;
+}
+#ourequipos .produc-view  .produc-desc, #ourmodalidad .produc-view  .produc-desc{
+width: 80%;
+font-size: 100%;
+color: #aaa;
+padding: 0;
+}
+#ourequipos .goto-panel span, #ourmodalidad .goto-panel span{
+display:block;
+width: 100%;
+font-size: 200%;
+font-weight: bold;
+color: #000;
+}
+#ourequipos .goto-panel button, #ourmodalidad .goto-panel button{
+width: 70%;
+margin:5% 0 5% 30%;
+font-size: 100%;
+background: #06c;
+border:none;
+}
+#ourequipos .goto-panel button span, #ourmodalidad .goto-panel button span{
+display:inline-block;
+float:left;
+width: 80%;
+margin:auto;
+font-size: 150%;
+ font-weight: normal;
+color: #fff;
+padding:0;
+text-decoration:underline;
+}
+#ourequipos .goto-panel button img, #ourmodalidad .goto-panel button img{
+display:inline-block;
+float:left;
+width: 10%;
+margin:auto;
+padding:2% 0;
+font-size: 100%;
+color: #fff;
+}
+#ourequipos .goto-link, #ourmodalidad .goto-link{
+width:80%;
+margin: 0 10%;
+}
+#ourequipos .goto-link, #ourmodalidad .goto-link, #ourcourses-preview .goto-link *{
+text-align: center;
+background: #06c;
+}
+#ourequipos .goto-link span, #ourmodalidad .goto-link span{
+width: 70%;
+font-size: 150%;
+color: #fff;
+text-decoration: underline;
+}
+#ourequipos .goto-link button, #ourmodalidad .goto-link button{
+background: rgba(0, 0, 0, 0);
+border: none;
+width: 100%;
+max-height: 30px;
+}
+#ourequipos .dos-vinetas-izq-sup, #ourmodalidad .dos-vinetas-izq-sup, #colorario .dos-vinetas-izq-sup{
+width: 100%;
+text-align: center;
+max-width: 50%;
+min-width: 50%;
+padding: 5% 0 0 5%;
+}
+.dos-vinetas-izq-sup img{
+width: 80%;
+}
+#ourequipos  .produc-view img{
+width:10%;
+}
+@media screen and (max-width:760px){
+    #ourequipos .goto-link{
+    width:80%;
+    padding:15% 0;
+    }
+    #ourequipos .dos-vinetas-izq-sup, #ourmodalidad .dos-vinetas-izq-sup{
+    max-width: 100%;
+    min-width: 100%;
+    padding: 5% 0;
+    }
+    #ourequipos, #ourmodalidad{
+    padding:15% 0;
+    }
+    #ourequipos .goto-panel button, #ourmodalidad .goto-panel button{
+    width: 100%;
+    margin: 5% auto;
+    }
+}
+#colorario{
+margin: 10% 0;
+background-image: url('../recourses/background-coloraio.png');
+background-repeat: no-repeat;
+background-size: 100% 90%;
+}
+#colorario .dos-vinetas-izq-sup img{
+width: 50%;
+}
+#colorario1{
+width: 80%;
+margin: 0 20% 0 0;
+display: block;
+text-align: left;
+}
+#colorario2{
+width: 80%;
+margin: 0 10%;
+display: block;
+text-align: left;
+}
+#colorario3{
+width: 80%;
+margin: 0 0 0 20%;
+display: block;
+text-align: left;
+}
+#colorario4{
+width: 100%;
+margin: auto;
+display: block;
+text-align: left;
+}
+#colorario .produc-view{
+width: 100%;
+font-family:"aileron heavy";
+font-size:140%;
+color: #fff;
+}
+#colorario .produc-view span{
+line-height:2;
+}
+
+@media screen and (max-width:760px){
+    #colorario .dos-vinetas-izq-sup{
+    display: none;
+    }
+    #colorario{
+    background-image: none;
+    }
+    #colorario .produc-view{
+    width:90%;
+    padding: 10%;
+    padding-right:0;
+    background-image: url('../recourses/background-coloraio.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height:1;
+    }
+    #colorario .produc-view span{
+    line-height:1.5;
+    }
+}
+#form-contacto{
+display:block;
+width:100%;
+padding:5% 0 10%;
+}
+#form-contacto span{
+display:block;
+width:100%;
+margin:3% auto;
+font-family:"aileron heavy";
+font-weight:bold;
+font-size:200%;
+}
+#form-contacto button{
+display:block;
+width:50%;
+margin:auto;
+border:none;
+border-radius:8px;
+background:#fdd54f;
+}
+@media screen and (max-width:760px){
+    #form-contacto{
+    padding:30% 0;
+    }
+}
+
+/*Bottom*/
+.bottom{
+font-family: "aileron heavy";
+color: white;
+background: gray;
+background-image:url("../recourses/banner-bottom.png");
+background-size: contain;
+background-position: 100% 100%;
+background-repeat: no-repeat;
+width:100%;
+padding: 14px 0s 5px;
+}
+.col-bottom{
+display: flex;
+}
+.bottom div, .bottom div *{
+margin: 0 auto;
+font-family: "aileron heavy";
+color: white;
+background: rgba(255, 200, 0, 0);
+}
+.col span{
+font-size: 110%;
+display: block;
+margin: 20px auto;
+width:100%;
+text-align:left;
+}
+.col a{
+width:100%;
+font-size: 100%;
+display: block;
+color: white;
+text-align: left;
+padding: 5px 0;
+text-decoration: none;
+}
+#copyright{
+font-size: 80%;
+display:block;
+padding: 0 5% 1%;
+margin-top: 5%;
+opacity: 0.7;
+width:90%;
+text-align:left;
+}
+@media screen and (max-width:760px){
+    .col span{
+    font-size: 90%;
+    margin: 0 auto 10px;
+    }
+    .col a{
+    width:100%;
+    font-size: 70%;
+    }
+    .col-bottom{
+    display: block;
+    }
+    div.out-title, div.title{
+    margin-top: 10px;
+    }
+    .bottom{
+    background-position: 100% 85%;
+    }
+}

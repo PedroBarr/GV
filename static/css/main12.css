@@ -1,0 +1,91 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: #fc0;
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 6%;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+width: 90%;
+display: block;
+}
+.banner{
+width: 100%;
+}
+.organiz{
+display: flex;
+}
+.respons{
+display: none;
+}
+img{
+width: 100%;
+}
+@media screen and (max-width:760px){
+    .content{
+        margin-top: 15%;
+    }
+}
+.alert{
+background:#000;
+width:100%;
+padding: 15% 0;
+}
+.alert *{
+display:block;
+background:#fff0;
+}
+.alert span{
+font-family: "aileron heavy";
+font-size:200%;
+/*color:rgb(253,239,79);*/
+color:rgb(253,239,79);
+}
+.alert button{
+width:60%;
+margin: 5% auto;
+background: #fff;
+color:#000;
+border:none;
+border-radius:8px;
+}
+.alert button span{
+color:#000;
+}

@@ -1,0 +1,258 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+*{
+background: #000;
+color: #fc0;
+}
+
+/*Nav bar*/
+.navbar{
+font-family: Calibri;
+width:100%;
+overflow:hidden;
+position:fixed;
+margin: 0;
+top:0;
+text-align: center;
+}
+.navbar div, .navbar div *{
+color: #fc0;
+text-align: center;
+}
+.navbar .logo{
+width: 10%;
+font-family: "siffon outline";
+}
+.menu{
+margin:0 auto;
+overflow: hidden;
+width: 80%;
+}
+.menu *{
+background: rgba(51, 153, 255, 0);
+}
+.navbar .menu a {
+float: left;
+display: block;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+.navbar .menu a:hover {
+  color: #ff0;
+}
+.navbar .menu .icon {
+  display: none;
+}
+@media screen and (max-width:700px){
+    .navbar .menu a {display: none;}
+    .navbar .menu{
+    width: 60%;
+    }
+    .navbar .menu .icon {
+    float: right;
+    display: block;
+    font-size:120%;
+    }
+    .navbar .menu.responsive {position: relative;}
+    .menu.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+    .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+    }
+}
+
+/*Content*/
+.content{
+/*margin-top: 30px;*/
+font-family: "raleway heavy", Arial;
+color: #d0d;
+font-size: 100%;
+width:100%;
+}
+.section{
+display: block;
+width:100%;
+background-size: contain;
+background-position: 85% 0%;
+background-repeat: no-repeat;
+min-height: 500px;
+}
+.section *{
+margin: auto;
+padding: 14px 16px;
+background: rgba(51, 153, 255, 0);
+}
+.section p{
+color:white;
+font-family: Calibri;
+display: block;
+font-size:150%;
+}
+center{
+width: 100%;
+}
+.separator{
+width:100%;
+height: 50px;
+}
+#bienvenida{
+background-image:url("../recourses/baner-index-bienvenida.jpg");
+background-size: cover;
+background-position: 0% 0%;
+}
+#bienvenida span{
+font-family: "siffon outline";
+display: block;
+font-size:250%;
+}
+#bienvenida p{
+width: 80%;
+}
+.content button{
+background: rgba(255, 200, 0, 1);
+background-color: rgba(255, 200, 0, 1);
+font-size: 100%;
+font-family: "raleway heavy";
+color: black;
+border: None;
+border-radius: 15px;
+}
+#escuela{
+background-image:url("../recourses/baner-index-cantico.png");
+}
+#musica{
+background-image:url("../recourses/baner-index-musica.png");
+}
+#recursos{
+background-image:url("../recourses/baner-index-recursos.png");
+}
+#eventos{
+background-image:url("../recourses/baner-index-eventos.png");
+}
+#tienda{
+background-image:url("../recourses/baner-index-tienda.png");
+}
+#escuela div, #musica div, #recursos div, #eventos div, #tienda div{
+display: block;
+width: 50%;
+}
+#escuela div span, #escuela div p, #musica div span, #musica div p, #recursos div span, #recursos div p, #eventos div span, #eventos div p, #tienda div span, #tienda div p, #streaming div span, #streaming div p{
+display: block;
+}
+#escuela div p, #musica div p, #recursos div p, #eventos div p, #tienda div p{
+margin: auto;
+margin-left:0;
+width: 50%;
+}
+#escuela div span, #musica div span, #recursos div span, #eventos div span, #tienda div span{
+font-family: "raleway heavy";
+display: block;
+font-size:500%;
+max-height: 250px;
+}
+#escuela div button, #musica div button, #recursos div button, #eventos div button, #tienda div button {
+width: 30%;
+display: block;
+}
+#streaming p{
+margin: auto;
+font-size: 100%;
+}
+#streaming span{
+margin: auto;
+font-family: "siffon outline";
+display: block;
+width: 100%;
+font-size:300%;
+max-height: 250px;
+}
+@media screen and (max-width:700px){
+    .section{
+    min-height: 300px;
+    }
+    #escuela, #musica, #recursos, #eventos, #tienda{
+    background-position: 70% 0%;
+    }
+    #escuela div, #musica div, #recursos div, #eventos div, #tienda div{
+    display: block;
+    width: 100%;
+    }
+    #escuela div p, #musica div p, #recursos div p, #eventos div p, #tienda div p{
+    margin: auto;
+    width: 80%;
+    }
+    #escuela div span, #musica div span, #recursos div span, #eventos div span, #tienda div span{
+    font-size:250%;
+    }
+    #escuela div button, #musica div button, #recursos div button, #eventos div button, #tienda div button {
+    width: 60%;
+    }
+}
+
+/*Bottom*/
+.bottom{
+font-family: "raleway heavy";
+color: white;
+background: gray;
+width:100%;
+height: 400px;
+padding: 14px 2px;
+}
+.bottom div{
+margin: 0 auto;
+}
+.col-bottom{
+background: rgba(255, 200, 0, 0);
+float: left;
+display: inline-block;
+width: 30%;
+}
+.col-bottom span{
+background: rgba(255, 200, 0, 0);
+font-size: 110%;
+float: left;
+display: block;
+color: white;
+}
+.col-bottom a{
+background: rgba(255, 200, 0, 0);
+width:100%;
+font-size: 100%;
+float: left;
+display: block;
+color: white;
+text-align: left;
+padding: 14px 16px;
+}
+.embed-responsive {
+overflow:hidden;
+/*padding-bottom:56.25%;/*facebook video*/
+/*padding-bottom:100%;/*wordpress*/
+padding-bottom:56.25%;/*youtube video*/
+position:relative;
+height:0;
+width: 100%;
+}
+.embed-responsive iframe {
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}

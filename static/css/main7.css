@@ -1,0 +1,91 @@
+/*General*/
+@-ms-viewport{
+  width: device-width;
+}
+@font-face{
+font-family: "siffon";
+src: url("../recourses/SIFONN_BASIC.otf");
+}
+@font-face{
+font-family: "siffon outline";
+src: url("../recourses/SIFONN_BASIC_OUTLINE.otf");
+}
+@font-face{
+font-family: "raleway heavy";
+src: url("../recourses/raleway.heavy.ttf");
+}
+@font-face{
+font-family: "playlist script";
+src: url("../recourses/Playlist_Script.otf");
+}
+@font-face{
+font-family: "aileron";
+src: url("../recourses/aileron.regular.otf");
+}
+@font-face{
+font-family: "aileron heavy";
+src: url("../recourses/aileron.heavy.otf");
+}
+*{
+background: #000;
+color: rgb(253,239,79);
+}
+
+/*Content*/
+.content{
+width:100%;
+position: absolute;
+left: 0;
+top: 0;
+margin-top: 10%;
+text-align: center;
+}
+.section{
+text-align: center;
+margin: 0;
+width: 90%;
+display: block;
+margin: 4% auto 10%;
+}
+.banner{
+width: 100%;
+}
+.organiz{
+display: flex;
+}
+.product-view{
+width:100%;
+}
+.product-view span{
+display: block;
+width:100%;
+text-align: center;
+font-family: "aileron";
+font-size: 100%;
+margin-bottom: 10%;
+}
+.product-view img{
+width:80%;
+margin: 1% auto
+}
+.product-view button{
+display: block;
+width:60%;
+font-family: "aileron heavy";
+font-size: 100%;
+margin: 10% auto;
+background: rgb(253,239,79);
+color: #000;
+border: none;
+border-radius: 8px;
+padding: 3% 0;
+margin:10% auto;
+}
+@media screen and (max-width:760px){
+    .organiz{
+    display: block;
+    }
+    .product-view{
+    margin: 25% auto;
+    }
+}

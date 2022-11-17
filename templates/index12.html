@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{%block header%}
+        <title>Adoraci&oacute;n y Sanidad - Directo</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main12.css')}}"/>
+{%endblock%}
+{%block content%}
+        <div class="content" id="content">
+            {%if stream%}
+            {%else%}
+                <div class="alert">
+                <form id="frmRet">
+                        <span class="titulo">A&uacute;n no hay transmiciones disponibles</span>
+                        <button type="button" onclick="submition('frmRet', '{{url_for('index')}}');">
+                            <span>Volver a...</span>
+                            <img src="{{url_for('static', filename='recourses/banner-adoracion-y-sanidad.png')}}"/>
+                        </button>
+                    </form>
+                </div>
+            {%endif%}
+{%endblock%}
